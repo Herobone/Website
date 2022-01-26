@@ -75,8 +75,23 @@ export const App = (): JSX.Element => {
                     width: "105vw",
                 }}
             />
-            <img src={midImage} alt="Mid" style={{ position: "absolute", top: 1491, width: "105vw", zIndex: 1 }} />
-            <img src={footerImage} alt="Sea Floor" style={{ position: "absolute", top: 1910, width: "105vw" }} />
+            <h1
+                style={{
+                    position: "fixed",
+                    top: `calc(10% + ${scroll * 0.05}rem)`,
+                    left: "calc(50% - 30rem)",
+                    fontSize: "15rem",
+                    zIndex: 1001,
+                }}
+            >
+                Herobone
+            </h1>
+            <img src={midImage} alt="Mid" style={{ position: "absolute", top: "112%", width: "105vw", zIndex: 1002 }} />
+            <img
+                src={footerImage}
+                alt="Sea Floor"
+                style={{ position: "absolute", top: "140%", width: "105vw", zIndex: 1002 }}
+            />
         </>
     );
 };
