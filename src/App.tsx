@@ -18,15 +18,22 @@
 
 import React from "react";
 import headerImage from "./media/header_background.svg";
+import footerImage from "./media/footer.svg";
+import midImage from "./media/Mid.svg";
 
 export const App = (): JSX.Element => {
     return (
-        <img
-            src={headerImage}
-            alt="Mountains"
-            style={{
-                marginLeft: -10,
-            }}
-        />
+        <>
+            <img
+                src={headerImage}
+                alt="Mountains"
+                style={{
+                    marginLeft: -15,
+                    width: "105vw",
+                }}
+            />
+            <img src={midImage} alt="Mid" style={{ marginTop: -20, width: "105vw" }} />
+            <img src={footerImage} alt="Sea Floor" style={{ marginTop: -20, width: "105vw" }} />
+        </>
     );
 };
