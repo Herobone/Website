@@ -19,7 +19,7 @@
 import React from "react";
 import headerImage from "./media/header_background.svg";
 
-function App() {
+export const App = (): JSX.Element => {
     return (
         <img
             src={headerImage}
@@ -29,6 +29,4 @@ function App() {
             }}
         />
     );
-}
-
-export default App;
+};
