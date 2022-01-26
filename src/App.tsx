@@ -16,24 +16,67 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-import React from "react";
-import headerImage from "./media/header_background.svg";
+import React, { useEffect, useState } from "react";
 import footerImage from "./media/footer.svg";
 import midImage from "./media/Mid.svg";
+import BG from "./media/BG.svg";
+import FG from "./media/FG.svg";
+import Cloud1 from "./media/Cloud 1.svg";
+import Cloud2 from "./media/Cloud 2.svg";
+import Cloud3 from "./media/Cloud 3.svg";
+import Mountain1 from "./media/Mountain 1.svg";
 
 export const App = (): JSX.Element => {
+    const [scroll, setScroll] = useState(0);
+    const updateScroll = (): void => setScroll(window.scrollY);
+
+    useEffect(() => {
+        window.addEventListener("scroll", updateScroll);
+
+        return () => {
+            window.removeEventListener("scroll", updateScroll);
+        };
+    });
+
     return (
         <>
             <img
-                src={headerImage}
+                src={FG}
+                alt="FG"
+                style={{ position: "absolute", left: "-0.5%", top: "53%", width: "105%", zIndex: 1000 }}
+            />
+            <img
+                src={Cloud3}
+                alt="Mid"
+                style={{ position: "absolute", top: "58%", left: 400 - scroll * 1.2, width: "28%", zIndex: 999 }}
+            />
+            <img
+                src={Mountain1}
+                alt="Mid"
+                style={{ position: "absolute", top: "45%", left: 0, width: "55%", zIndex: 998 }}
+            />
+            <img
+                src={Cloud2}
+                alt="Mid"
+                style={{ position: "absolute", top: "50%", right: -30 - scroll, width: "40%", zIndex: 997 }}
+            />
+            <img
+                src={Cloud1}
+                alt="Mid"
+                style={{ position: "absolute", top: "40%", left: 30 - scroll * 0.8, width: "20%", zIndex: 997 }}
+            />
+            <img
+                src={BG}
                 alt="Mountains"
                 style={{
-                    marginLeft: -15,
+                    position: "absolute",
+                    left: "-0.5%",
+                    top: 0,
                     width: "105vw",
                 }}
             />
-            <img src={midImage} alt="Mid" style={{ marginTop: -20, width: "105vw" }} />
-            <img src={footerImage} alt="Sea Floor" style={{ marginTop: -20, width: "105vw" }} />
+            <img src={midImage} alt="Mid" style={{ position: "absolute", top: 1491, width: "105vw", zIndex: 1 }} />
+            <img src={footerImage} alt="Sea Floor" style={{ position: "absolute", top: 1910, width: "105vw" }} />
         </>
     );
 };
