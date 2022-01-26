@@ -23,6 +23,7 @@ function App() {
     return (
         <img
             src={headerImage}
+            alt="Mountains"
             style={{
                 marginLeft: -10,
             }}
