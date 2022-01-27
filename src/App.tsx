@@ -99,8 +99,8 @@ export const App = (): JSX.Element => {
             <h1
                 style={{
                     position: "fixed",
-                    top: `calc(10% + ${scroll * 0.05}rem)`,
-                    left: "30%",
+                    margin: 0,
+                    transform: `translate(30vw, calc(10vh + ${scroll * 0.1}vh))`,
                     fontSize: "10vw",
                     zIndex: 1001,
                 }}
@@ -110,7 +110,12 @@ export const App = (): JSX.Element => {
             <img
                 src={footerImage}
                 alt="Sea Floor"
-                style={{ position: "absolute", top: "130%", width: "105vw", zIndex: 1002 }}
+                style={{
+                    position: "absolute",
+                    top: window.innerHeight * 2 - scroll * 0.1,
+                    width: "105vw",
+                    zIndex: 1002,
+                }}
             />
         </>
     );
