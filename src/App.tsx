@@ -36,61 +36,75 @@ export const App = (): JSX.Element => {
         return () => {
             window.removeEventListener("scroll", updateScroll);
         };
-    });
+    }, []);
 
     return (
         <>
-            <img
-                src={FG}
-                alt="FG"
-                style={{ position: "absolute", left: "-0.5%", top: "53%", width: "105%", zIndex: 1000 }}
-            />
-            <img
-                src={Cloud3}
-                alt="Mid"
-                style={{ position: "absolute", top: "58%", left: 400 - scroll * 1.2, width: "28%", zIndex: 999 }}
-            />
-            <img
-                src={Mountain1}
-                alt="Mid"
-                style={{ position: "absolute", top: "45%", left: 0, width: "55%", zIndex: 998 }}
-            />
-            <img
-                src={Cloud2}
-                alt="Mid"
-                style={{ position: "absolute", top: "50%", right: -30 - scroll, width: "40%", zIndex: 997 }}
-            />
-            <img
-                src={Cloud1}
-                alt="Mid"
-                style={{ position: "absolute", top: "40%", left: 30 - scroll * 0.8, width: "20%", zIndex: 997 }}
-            />
-            <img
-                src={BG}
-                alt="Mountains"
-                style={{
-                    position: "absolute",
-                    left: "-0.5%",
-                    top: 0,
-                    width: "105vw",
-                }}
-            />
+            <div style={{ position: "relative", width: "100%" }}>
+                <img
+                    src={Cloud1}
+                    alt="Mid"
+                    style={{
+                        position: "relative",
+                        left: 30 - scroll * 0.8,
+                        width: "20%",
+                        zIndex: 997,
+                        transform: "translate(0, 200%)",
+                    }}
+                />
+                <img
+                    src={FG}
+                    alt="FG"
+                    style={{ position: "absolute", left: "-1%", top: "280%", width: "105%", zIndex: 1000 }}
+                />
+                <img
+                    src={Mountain1}
+                    alt="Mid"
+                    style={{ position: "absolute", top: "250%", left: 0, width: "55%", zIndex: 998 }}
+                />
+                <img
+                    src={Cloud3}
+                    alt="Mid"
+                    style={{
+                        position: "absolute",
+                        top: "330%",
+                        left: `calc(15% - ${scroll * 0.1}%)`,
+                        width: "28%",
+                        zIndex: 999,
+                    }}
+                />
+                <img
+                    src={Cloud2}
+                    alt="Mid"
+                    style={{ position: "absolute", top: "250%", right: -30 - scroll, width: "40%", zIndex: 997 }}
+                />
+                <img
+                    src={BG}
+                    alt="Mountains"
+                    style={{
+                        position: "absolute",
+                        left: "-0.5%",
+                        width: "105%",
+                    }}
+                />
+            </div>
+
             <h1
                 style={{
                     position: "fixed",
                     top: `calc(10% + ${scroll * 0.05}rem)`,
-                    left: "calc(50% - 30rem)",
-                    fontSize: "15rem",
+                    left: "30%",
+                    fontSize: "10vw",
                     zIndex: 1001,
                 }}
             >
                 Herobone
             </h1>
-            <img src={midImage} alt="Mid" style={{ position: "absolute", top: "112%", width: "105vw", zIndex: 1002 }} />
+            <img src={midImage} alt="Mid" style={{ position: "absolute", top: "99%", width: "105vw", zIndex: 1002 }} />
             <img
                 src={footerImage}
                 alt="Sea Floor"
-                style={{ position: "absolute", top: "140%", width: "105vw", zIndex: 1002 }}
+                style={{ position: "absolute", top: "130%", width: "105vw", zIndex: 1002 }}
             />
         </>
     );
