@@ -18,7 +18,6 @@
 
 import React, { useEffect, useState } from "react";
 import footerImage from "./media/footer.svg";
-import midImage from "./media/Mid.svg";
 import BG from "./media/BG.svg";
 import FG from "./media/FG.svg";
 import Cloud1 from "./media/Cloud 1.svg";
@@ -40,35 +39,38 @@ export const App = (): JSX.Element => {
 
     return (
         <>
-            <div style={{ position: "relative", width: "100%" }}>
+            <div style={{ position: "relative", width: "100%", overflowX: "hidden" }}>
                 <img
                     src={Cloud1}
                     alt="Mid"
                     style={{
-                        position: "relative",
-                        left: 30 - scroll * 0.8,
+                        position: "fixed",
                         width: "20%",
                         zIndex: 997,
-                        transform: "translate(0, 200%)",
+                        transform: `translate(calc(20% - ${scroll * 0.1}%), 250%)`,
                     }}
                 />
                 <img
                     src={FG}
                     alt="FG"
-                    style={{ position: "absolute", left: "-1%", top: "280%", width: "105%", zIndex: 1000 }}
+                    style={{
+                        position: "fixed",
+                        transform: "translate(-2%, 70%)",
+                        width: "105%",
+                        zIndex: 1000,
+                    }}
                 />
                 <img
                     src={Mountain1}
                     alt="Mid"
-                    style={{ position: "absolute", top: "250%", left: 0, width: "55%", zIndex: 998 }}
+                    style={{ position: "fixed", transform: "translate(0%, 104%)", width: "55%", zIndex: 998 }}
                 />
                 <img
                     src={Cloud3}
                     alt="Mid"
                     style={{
-                        position: "absolute",
-                        top: "330%",
-                        left: `calc(15% - ${scroll * 0.1}%)`,
+                        position: "fixed",
+                        transform: `translate(calc(50% - ${scroll * 0.2}%), 530%)`,
                         width: "28%",
                         zIndex: 999,
                     }}
@@ -76,13 +78,18 @@ export const App = (): JSX.Element => {
                 <img
                     src={Cloud2}
                     alt="Mid"
-                    style={{ position: "absolute", top: "250%", right: -30 - scroll, width: "40%", zIndex: 997 }}
+                    style={{
+                        position: "fixed",
+                        transform: `translate(calc(155% + ${scroll * 0.15}%), 250%)`,
+                        width: "40%",
+                        zIndex: 997,
+                    }}
                 />
                 <img
                     src={BG}
                     alt="Mountains"
                     style={{
-                        position: "absolute",
+                        position: "fixed",
                         left: "-0.5%",
                         width: "105%",
                     }}
@@ -100,7 +107,6 @@ export const App = (): JSX.Element => {
             >
                 Herobone
             </h1>
-            <img src={midImage} alt="Mid" style={{ position: "absolute", top: "99%", width: "105vw", zIndex: 1002 }} />
             <img
                 src={footerImage}
                 alt="Sea Floor"
